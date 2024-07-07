@@ -11,39 +11,36 @@ plt.ylabel("Frequency")
 plt.title(f"Histogram of {column_to_plot}")
 plt.show()
 
-#BOXPLOT
+# BOXPLOT
 
 plt.boxplot(data[column_to_plot])
-
 plt.xlabel(column_to_plot)
 plt.ylabel("Values")
 plt.title("Boxplot of " + column_to_plot)
-
-# Display the boxplot
 plt.show()
 
 
-#SCATTER PLOT
+#  SCATTER PLOT
 
 x_axis = "longitude"
 y_axis = "latitude"
 
-# Create the scatter plot
+#Create the scatter plot
 plt.scatter(data[x_axis], data[y_axis])
 
-# Add labels and title to the plot
+#Add labels and title to the plot
 plt.xlabel(x_axis)
 plt.ylabel(y_axis)
 plt.title("Scatter Plot of " + x_axis + " vs " + y_axis)
 
-# Display the scatter plot
+#Display the scatter plot
 plt.show()
 
-#LINE CHART
+# LINE CHART
 x_axis = "longitude"
 y_axis = "latitude"
 
-# Create the line chart
+#Create the line chart
 plt.plot(data[x_axis], data[y_axis])
 plt.xlabel(x_axis)
 plt.ylabel(y_axis)
@@ -52,18 +49,18 @@ plt.show()
 
 
 # BAR GRAPH
-x_axis = "longitude"
-y_axis = "latitude"
+x_axis_column = "longitude"
+y_axis_column = "latitude"
 
-# Create the line chart
-plt.plot(data[x_axis], data[y_axis])
+#Create the bar graph
+plt.bar(data[x_axis_column], data[y_axis_column])
 
-# Add labels and title to the plot
-plt.xlabel(x_axis)
-plt.ylabel(y_axis)
-plt.title("Line Chart - " + y_axis + " vs " + x_axis)
+#Add labels and title to the plot
+plt.xlabel(x_axis_column)
+plt.ylabel(y_axis_column)
+plt.title("Bar Graph of " + y_axis_column + " vs " + x_axis_column)
 
-# Display the line chart
+#Display the bar graph
 plt.show()
 
 
@@ -71,33 +68,25 @@ plt.show()
 # PIE CHART
 
 category_column = "longitude"
-
-
 value_column = "latitude"
-
-# Create the pie chart
+#Create the pie chart
 plt.pie(data[value_column], labels=data[category_column], autopct="%1.1f%%")
 
-# Add title to the plot (optional)
+#Add title to the plot (optional)
 plt.title("Pie Chart")
 
-# Display the pie chart
+#Display the pie chart
 plt.show()
 
 # AREA FILL CHART
 
 category_column = "longitude"
-
-
 value_column = "latitude"
-
-# Create the pie chart
+#Create the pie chart
 plt.pie(data[value_column], labels=data[category_column], autopct="%1.1f%%")
-
-# Add title to the plot (optional)
+#Add title to the plot (optional)
 plt.title("Pie Chart")
-
-# Display the pie chart
+#Display the pie chart
 plt.show()
 
 
@@ -122,10 +111,8 @@ except StatisticsError:
 # CORRELATION
 correlation_matrix = df.corr()
 
-# Print the correlation matrix
+#Print the correlation matrix
 print(correlation_matrix)
-
-
 column1 = 'longitude'
 column2 = 'latitude'
 correlation_value = correlation_matrix[column1][column2]
